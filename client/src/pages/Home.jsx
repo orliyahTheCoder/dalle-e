@@ -23,11 +23,14 @@ const Home = () => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("http://localhost:8080/api/v1/post", {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await axios.get(
+          "https://dalle-e-jrvi.onrender.com/api/v1/post",
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         if (response.status === 200) {
           const result = response.data;

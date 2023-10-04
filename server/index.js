@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://127.0.0.1:5173",
+    origin: "https://dalle-clone-unsplash.netlify.app/",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   })
@@ -25,11 +25,11 @@ app.use("/api/v1/dalle", dalleRoutes);
 app.get("/", async (req, res) => {
   res.send("Hello from DALL- E");
 });
-
+const PORT = process.env.PORT || 8080;
 const startServer = async () => {
   try {
     connectDB(process.env.MONGODB_URL);
-    app.listen(8080, () =>
+    app.listen(PORT, () =>
       console.log("Server is listening at http://localhost:8080")
     );
   } catch (error) {

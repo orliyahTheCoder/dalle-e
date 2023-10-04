@@ -21,7 +21,7 @@ const CreatePost = () => {
       try {
         setGeneratingImg(true);
         const response = await axios.post(
-          "http://localhost:8080/api/v1/dalle",
+          "https://dalle-e-jrvi.onrender.com/api/v1/dalle",
           {
             prompt: form.prompt,
           },
@@ -46,9 +46,12 @@ const CreatePost = () => {
     if (form.prompt && form.photo) {
       setLoading(true);
       try {
-        const response = await axios.post("http://localhost:8080/api/v1/post", {
-          ...form,
-        });
+        const response = await axios.post(
+          "https://dalle-e-jrvi.onrender.com/api/v1/post",
+          {
+            ...form,
+          }
+        );
         if (response.status === 201) {
           console.log("Navigating to /");
           navigate("/");
