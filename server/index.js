@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://dalle-clone-unsplash.netlify.app/",
+    origin: "https://dalle-clone-unsplash.netlify.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   })
